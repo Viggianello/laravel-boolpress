@@ -48,6 +48,7 @@ class PostController extends Controller
         $dati['slug'] = $slug;
         // salvo i dati del post
         $nuovo_post = new Post();
+        // prende quello che c'è dentro dati e li mette 
         $nuovo_post->fill($dati);
         $nuovo_post->save();
         return redirect()->route('admin.posts.index');
