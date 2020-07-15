@@ -6,10 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    //  le colonne con questi nomi possono essere riempite in maniera automatica
-    protected $fillable = ['title', 'content', 'slug','category_id'];
+    protected $fillable = ['title', 'content', 'slug', 'category_id'];
 
     public function category() {
-       return $this->belongsTo('App\Category');
-   }
+        return $this->belongsTo('App\Category');
+    }
+
+    public function tags() {
+        return $this->belongsToMany('App\Tag');
+    }
 }
